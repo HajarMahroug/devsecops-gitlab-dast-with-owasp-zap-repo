@@ -1,1 +1,7 @@
-
+zap_scan:
+  stage: dast
+  script:
+    - zap-baseline.py -t http://your-vulnerable-app.com -r zap_report.html
+  artifacts:
+    paths:
+      - zap_report.html
